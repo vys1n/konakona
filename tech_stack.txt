@@ -1,0 +1,9 @@
+Category,Tool
+Framework,Next.js (App Router)
+Language,TypeScript (Highly recommended for marketplaces)
+Styling,Tailwind CSS
+Components,shadcn/ui
+Data Fetching,TanStack Query
+State Management,Zustand
+Maps,React Leaflet (Open Source) or Google Maps API
+Payment,Razorpay SDK
