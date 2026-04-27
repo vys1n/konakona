@@ -44,7 +44,7 @@ export default function Footer() {
         
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-zinc-200 pt-8 dark:border-zinc-800 sm:flex-row">
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
-            © 2024 Konakona. Indie Student Project.
+            © 2026 Konakona. Indie Student Project.
           </p>
           <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
             Created by <span className="italic">Kavy Singh Ranawat</span>

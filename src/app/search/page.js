@@ -4,21 +4,49 @@ import { useSearchParams } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { LISTINGS } from "@/data/mock-data";
-import { Star, MapPin, SlidersHorizontal } from "lucide-react";
+import { Star, MapPin, SlidersHorizontal, ChevronDown, Check } from "lucide-react";
 import Link from "next/link";
-import { Suspense, useState, useMemo } from "react";
+import { Suspense, useState, useMemo, useRef, useEffect } from "react";
+import { normalizeLocationSearch, formatLocationDisplay } from "@/lib/location";
+import { cn } from "@/lib/utils";
+
+const SORT_OPTIONS = [
+  { label: "Sort by Ratings", value: "rating" },
+  { label: "Price: Low to High", value: "price_low" },
+  { label: "Price: High to Low", value: "price_high" },
+];
 
 function SearchResults() {
   const searchParams = useSearchParams();
   const typeQuery = searchParams.get("type")?.toLowerCase() || "";
-  const locationQuery = searchParams.get("location")?.toLowerCase() || "";
+  const locationRawQuery = searchParams.get("location") || "";
   
-  const [sortBy, setSortBy] = useState("rating"); // Default sort by rating
+  const [sortBy, setSortBy] = useState("rating");
+  const [isSortOpen, setIsSortOpen] = useState(false);
+  const sortRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (sortRef.current && !sortRef.current.contains(event.target)) {
+        setIsSortOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const filteredListings = useMemo(() => {
+    const locationTerms = normalizeLocationSearch(locationRawQuery);
+
     let results = LISTINGS.filter((listing) => {
       const matchesType = !typeQuery || listing.type.toLowerCase().includes(typeQuery);
-      const matchesLocation = !locationQuery || listing.location.toLowerCase().includes(locationQuery);
+      
+      const matchesLocation = !locationRawQuery || locationTerms.some(term => {
+        const regex = new RegExp(`\\b${term}\\b`, 'i');
+        return regex.test(listing.location);
+      });
+      
       return matchesType && matchesLocation;
     });
 
@@ -31,7 +59,11 @@ function SearchResults() {
     }
 
     return results;
-  }, [typeQuery, locationQuery, sortBy]);
+  }, [typeQuery, locationRawQuery, sortBy]);
+
+  const displayType = typeQuery ? typeQuery.charAt(0).toUpperCase() + typeQuery.slice(1) : "";
+  const displayLocation = formatLocationDisplay(locationRawQuery);
+  const currentSortLabel = SORT_OPTIONS.find(opt => opt.value === sortBy)?.label;
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -42,9 +74,9 @@ function SearchResults() {
           <div>
             <h1 className="text-2xl font-bold">
               {filteredListings.length} {filteredListings.length === 1 ? 'space' : 'spaces'} found
-              {(typeQuery || locationQuery) && " for "}
-              <span className="text-zinc-500 capitalize">
-                {[typeQuery, locationQuery].filter(Boolean).join(" in ")}
+              {(displayType || displayLocation) && " for "}
+              <span className="text-zinc-500">
+                {displayType} {displayType && displayLocation && "in"} {displayLocation}
               </span>
             </h1>
             <p className="mt-1 text-sm text-zinc-500">
@@ -52,18 +84,43 @@ function SearchResults() {
             </p>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 rounded-lg border border-zinc-200 px-3 py-2 text-sm dark:border-zinc-800">
-              <SlidersHorizontal className="h-4 w-4" />
-              <select 
-                className="bg-transparent outline-none"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
+          <div className="flex items-center">
+            {/* Custom Rounded Dropdown */}
+            <div className="relative" ref={sortRef}>
+              <button 
+                onClick={() => setIsSortOpen(!isSortOpen)}
+                className={cn(
+                  "flex h-10 items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 text-sm font-medium transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900",
+                  isSortOpen && "border-zinc-900 ring-1 ring-zinc-900 dark:border-zinc-100 dark:ring-zinc-100"
+                )}
               >
-                <option value="rating">Sort by Ratings</option>
-                <option value="price_low">Price: Low to High</option>
-                <option value="price_high">Price: High to Low</option>
-              </select>
+                <SlidersHorizontal className="h-4 w-4 text-zinc-500" />
+                <span>{currentSortLabel}</span>
+                <ChevronDown className={cn("h-4 w-4 text-zinc-400 transition-transform", isSortOpen && "rotate-180")} />
+              </button>
+
+              {isSortOpen && (
+                <div className="absolute right-0 mt-2 w-56 overflow-hidden rounded-2xl border border-zinc-200 bg-white p-1 shadow-xl dark:border-zinc-800 dark:bg-zinc-950 z-50">
+                  {SORT_OPTIONS.map((option) => (
+                    <button
+                      key={option.value}
+                      onClick={() => {
+                        setSortBy(option.value);
+                        setIsSortOpen(false);
+                      }}
+                      className={cn(
+                        "flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition-colors",
+                        sortBy === option.value 
+                          ? "bg-zinc-100 font-semibold dark:bg-zinc-900" 
+                          : "hover:bg-zinc-50 dark:hover:bg-zinc-900"
+                      )}
+                    >
+                      {option.label}
+                      {sortBy === option.value && <Check className="h-4 w-4" />}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
