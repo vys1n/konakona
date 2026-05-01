@@ -8,6 +8,11 @@ export const LISTINGS = [
     rating: 4.8,
     reviews: 24,
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1590684153452-d3adaba100f1?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=800&auto=format&fit=crop"
+    ],
     description: "Large industrial warehouse perfect for inventory storage or creative studio space.",
   },
   {
@@ -19,6 +24,11 @@ export const LISTINGS = [
     rating: 4.9,
     reviews: 12,
     image: "https://images.unsplash.com/photo-1635108198854-26645ffe6714?w=500&auto=format&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1635108198854-26645ffe6714?w=500&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1595213611094-17c37e58a27d?w=500&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=500&auto=format&fit=crop"
+    ],
     description: "Clean, dry garage space suitable for car storage or small furniture.",
   },
   {
@@ -30,6 +40,11 @@ export const LISTINGS = [
     rating: 4.7,
     reviews: 45,
     image: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800&auto=format&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
+    ],
     description: "Sun-drenched studio space for photographers and creators.",
   },
   {
@@ -41,6 +56,10 @@ export const LISTINGS = [
     rating: 4.5,
     reviews: 8,
     image: "https://images.unsplash.com/photo-1646592491741-e79ae5953486?w=500&auto=format&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1646592491741-e79ae5953486?w=500&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=500&auto=format&fit=crop"
+    ],
     description: "Climate-controlled basement room for household items.",
   },
   {
@@ -52,6 +71,10 @@ export const LISTINGS = [
     rating: 4.6,
     reviews: 15,
     image: "https://images.unsplash.com/photo-1603951743220-867ee4ae77d4?w=500&auto=format&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1603951743220-867ee4ae77d4?w=500&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&auto=format&fit=crop"
+    ],
     description: "Rustic barn with plenty of space for farm equipment or large scale storage.",
   },
   {
@@ -63,6 +86,10 @@ export const LISTINGS = [
       rating: 4.7,
       reviews: 8,
       image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=500&auto=format&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=500&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=500&auto=format&fit=crop"
+      ],
       description: "Office Space with big windows and large floor plan",
   },
   {
@@ -74,6 +101,10 @@ export const LISTINGS = [
       rating: 4.9,
       reviews: 23,
       image: "https://images.unsplash.com/photo-1732298286192-b3ee55630673?w=500&auto=format&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1732298286192-b3ee55630673?w=500&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&auto=format&fit=crop"
+      ],
       description: "A modern flat to-rent",
   }
 ];
