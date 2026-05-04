@@ -115,10 +115,10 @@ export default function TypesPage() {
               List your barn, basement, or garage on Konakona and start earning today.
             </p>
             <Link 
-              href="/become-a-host"
+              href="/host"
               className="mt-8 inline-block rounded-full bg-white px-8 py-3 text-sm font-bold text-black transition-transform hover:scale-105 dark:bg-black dark:text-white"
             >
-              Become a Host
+              Host your space
             </Link>
           </div>
         </section>

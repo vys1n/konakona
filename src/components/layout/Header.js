@@ -20,13 +20,12 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link 
-            href="/become-a-host" 
+          <Link
+            href="/host"
             className="hidden sm:block text-sm font-medium text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors"
           >
             Become a Host
-          </Link>
-          
+          </Link>          
           <div className="flex items-center gap-2 rounded-full border border-zinc-200 p-1.5 hover:shadow-md transition-shadow dark:border-zinc-800">
             <Menu className="h-4 w-4 ml-1 text-zinc-500" />
             <UserCircle className="h-7 w-7 text-zinc-400" />

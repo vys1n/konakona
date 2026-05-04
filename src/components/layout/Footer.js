@@ -19,7 +19,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-black dark:text-white">Product</h3>
             <ul className="mt-4 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
               <li><Link href="/search" className="hover:text-black dark:hover:text-white">Find Space</Link></li>
-              <li><Link href="/become-a-host" className="hover:text-black dark:hover:text-white">Become a Host</Link></li>
+              <li><Link href="/host" className="hover:text-black dark:hover:text-white">Host your space</Link></li>
               <li><Link href="/pricing" className="hover:text-black dark:hover:text-white">Pricing</Link></li>
             </ul>
           </div>
