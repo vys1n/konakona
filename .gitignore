@@ -42,6 +42,7 @@ next-env.d.ts
 
 plan.txt
 prompt.txt
+supabase.txt
 
 # keep graph outputs, skip heavy/local-only files
 
