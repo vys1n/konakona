@@ -1,14 +1,19 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ImageGallery from "@/components/ui/ImageGallery";
-import { LISTINGS } from "@/data/mock-data";
+import { supabase } from "@/lib/supabase";
 import { Star, MapPin, ArrowLeft, Shield, Check, Info } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export default async function ListingPage({ params }) {
   const { id } = await params;
-  const listing = LISTINGS.find((item) => item.id === id);
+  
+  const { data: listing } = await supabase
+    .from('listings')
+    .select('*')
+    .eq('id', id)
+    .single();
 
   if (!listing) {
     notFound();

@@ -1,12 +1,18 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
-import { LISTINGS } from "@/data/mock-data";
+import { supabase } from "@/lib/supabase";
 import { Star, MapPin } from "lucide-react";
 import Link from "next/link";
 
-export default function Home() {
-  const featuredListings = LISTINGS.slice(0, 4);
+export default async function Home() {
+  const { data: featuredListings } = await supabase
+    .from('listings')
+    .select('*')
+    .limit(4)
+    .order('rating', { ascending: false });
+
+  const listings = featuredListings || [];
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -64,7 +70,7 @@ export default function Home() {
             </div>
 
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {featuredListings.map((listing) => (
+              {listings.map((listing) => (
                 <Link key={listing.id} href={`/listing/${listing.id}`} className="group block space-y-3">
                   <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800">
                     <img

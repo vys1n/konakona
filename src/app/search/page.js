@@ -3,10 +3,10 @@
 import { useSearchParams } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { LISTINGS } from "@/data/mock-data";
-import { Star, MapPin, SlidersHorizontal, ChevronDown, Check } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+import { Star, MapPin, SlidersHorizontal, ChevronDown, Check, Loader2 } from "lucide-react";
 import Link from "next/link";
-import { Suspense, useState, useMemo, useRef, useEffect } from "react";
+import { Suspense, useState, useRef, useEffect } from "react";
 import { normalizeLocationSearch, formatLocationDisplay } from "@/lib/location";
 import { cn } from "@/lib/utils";
 
@@ -18,9 +18,11 @@ const SORT_OPTIONS = [
 
 function SearchResults() {
   const searchParams = useSearchParams();
-  const typeQuery = searchParams.get("type")?.toLowerCase() || "";
+  const typeQuery = searchParams.get("type") || "";
   const locationRawQuery = searchParams.get("location") || "";
   
+  const [listings, setListings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [sortBy, setSortBy] = useState("rating");
   const [isSortOpen, setIsSortOpen] = useState(false);
   const sortRef = useRef(null);
@@ -36,29 +38,39 @@ function SearchResults() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const filteredListings = useMemo(() => {
-    const locationTerms = normalizeLocationSearch(locationRawQuery);
+  useEffect(() => {
+    async function fetchListings() {
+      setIsLoading(true);
+      let query = supabase.from("listings").select("*");
 
-    let results = LISTINGS.filter((listing) => {
-      const matchesType = !typeQuery || listing.type.toLowerCase().includes(typeQuery);
-      
-      const matchesLocation = !locationRawQuery || locationTerms.some(term => {
-        const regex = new RegExp(`\\b${term}\\b`, 'i');
-        return regex.test(listing.location);
-      });
-      
-      return matchesType && matchesLocation;
-    });
+      if (typeQuery) {
+        query = query.ilike("type", `%${typeQuery}%`);
+      }
 
-    if (sortBy === "rating") {
-      results.sort((a, b) => b.rating - a.rating);
-    } else if (sortBy === "price_low") {
-      results.sort((a, b) => a.price - b.price);
-    } else if (sortBy === "price_high") {
-      results.sort((a, b) => b.price - a.price);
+      if (locationRawQuery) {
+        const terms = normalizeLocationSearch(locationRawQuery);
+        // Supabase/Postgres logic for multiple location terms
+        // For simplicity, we search for the first term or full string
+        query = query.ilike("location", `%${terms[0]}%`);
+      }
+
+      if (sortBy === "rating") {
+        query = query.order("rating", { ascending: false });
+      } else if (sortBy === "price_low") {
+        query = query.order("price", { ascending: true });
+      } else if (sortBy === "price_high") {
+        query = query.order("price", { ascending: false });
+      }
+
+      const { data, error } = await query;
+      
+      if (!error && data) {
+        setListings(data);
+      }
+      setIsLoading(false);
     }
 
-    return results;
+    fetchListings();
   }, [typeQuery, locationRawQuery, sortBy]);
 
   const displayType = typeQuery ? typeQuery.charAt(0).toUpperCase() + typeQuery.slice(1) : "";
@@ -73,7 +85,7 @@ function SearchResults() {
         <div className="mb-8 flex flex-col justify-between gap-4 border-b border-zinc-100 pb-8 dark:border-zinc-800 sm:flex-row sm:items-center">
           <div>
             <h1 className="text-2xl font-bold">
-              {filteredListings.length} {filteredListings.length === 1 ? 'space' : 'spaces'} found
+              {isLoading ? "Searching..." : `${listings.length} ${listings.length === 1 ? 'space' : 'spaces'} found`}
               {(displayType || displayLocation) && " for "}
               <span className="text-zinc-500">
                 {displayType} {displayType && displayLocation && "in"} {displayLocation}
@@ -125,9 +137,13 @@ function SearchResults() {
           </div>
         </div>
 
-        {filteredListings.length > 0 ? (
+        {isLoading ? (
+          <div className="flex min-h-[40vh] items-center justify-center">
+            <Loader2 className="h-8 w-8 animate-spin text-zinc-400" />
+          </div>
+        ) : listings.length > 0 ? (
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filteredListings.map((listing) => (
+            {listings.map((listing) => (
               <Link key={listing.id} href={`/listing/${listing.id}`} className="group block space-y-3">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800">
                   <img

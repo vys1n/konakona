@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { supabase } from "@/lib/supabase";
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -17,7 +18,8 @@ import {
   Check,
   Upload,
   ArrowRight,
-  Sparkles
+  Sparkles,
+  Loader2
 } from "lucide-react";
 import { SPACE_TYPES } from "@/data/mock-data";
 
@@ -37,6 +39,7 @@ const TYPE_ICONS = {
 export default function HostPage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [isPublished, setIsPublished] = useState(false);
+  const [isPublishing, setIsPublishing] = useState(false);
   const [formData, setFormData] = useState({
     type: "",
     location: "",
@@ -58,8 +61,32 @@ export default function HostPage() {
     return true;
   };
 
-  const handlePublish = () => {
-    setIsPublished(true);
+  const handlePublish = async () => {
+    setIsPublishing(true);
+    
+    const { data, error } = await supabase
+      .from('listings')
+      .insert([
+        {
+          title: formData.title,
+          type: formData.type,
+          location: formData.location,
+          price: parseFloat(formData.price),
+          description: formData.description,
+          // Use default image for now
+          rating: 5.0,
+          reviews: 0
+        }
+      ]);
+
+    if (!error) {
+      setIsPublished(true);
+    } else {
+      console.error('Error publishing listing:', error);
+      alert('Failed to publish listing. Please try again.');
+    }
+    
+    setIsPublishing(false);
   };
 
   if (isPublished) {
@@ -298,11 +325,17 @@ export default function HostPage() {
           
           <button
             onClick={currentStep === STEPS.length - 1 ? handlePublish : nextStep}
-            disabled={!isStepValid()}
-            className="flex items-center gap-2 rounded-full bg-black px-10 py-3 font-bold text-white transition-transform active:scale-95 disabled:opacity-30 dark:bg-white dark:text-black"
+            disabled={!isStepValid() || isPublishing}
+            className="flex items-center gap-2 rounded-full bg-black px-10 py-3 font-bold text-white transition-transform active:scale-95 disabled:opacity-30 dark:bg-white dark:text-black min-w-[140px] justify-center"
           >
-            {currentStep === STEPS.length - 1 ? "Publish Space" : "Next"}
-            {currentStep < STEPS.length - 1 && <ChevronRight className="h-5 w-5" />}
+            {isPublishing ? (
+              <Loader2 className="h-5 w-5 animate-spin" />
+            ) : (
+              <>
+                {currentStep === STEPS.length - 1 ? "Publish Space" : "Next"}
+                {currentStep < STEPS.length - 1 && <ChevronRight className="h-5 w-5" />}
+              </>
+            )}
           </button>
         </div>
       </footer>
