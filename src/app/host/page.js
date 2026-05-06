@@ -40,16 +40,58 @@ export default function HostPage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [isPublished, setIsPublished] = useState(false);
   const [isPublishing, setIsPublishing] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const [formData, setFormData] = useState({
     type: "",
     location: "",
     title: "",
     description: "",
     price: "",
+    image: "",
+    images: [],
   });
 
   const updateFormData = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleFileUpload = async (event) => {
+    const files = event.target.files;
+    if (!files || files.length === 0) return;
+
+    setIsUploading(true);
+    const newImages = [...formData.images];
+    let firstImageUrl = formData.image;
+
+    for (const file of files) {
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${Math.random()}.${fileExt}`;
+      const filePath = `${Date.now()}-${fileName}`;
+
+      const { data, error } = await supabase.storage
+        .from('listing-images')
+        .upload(filePath, file);
+
+      if (error) {
+        console.error('Error uploading file:', error);
+        alert(`Failed to upload ${file.name}`);
+        continue;
+      }
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('listing-images')
+        .getPublicUrl(filePath);
+
+      newImages.push(publicUrl);
+      if (!firstImageUrl) firstImageUrl = publicUrl;
+    }
+
+    setFormData(prev => ({
+      ...prev,
+      images: newImages,
+      image: firstImageUrl || prev.image
+    }));
+    setIsUploading(false);
   };
 
   const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1));
@@ -58,6 +100,7 @@ export default function HostPage() {
   const isStepValid = () => {
     if (currentStep === 0) return formData.type && formData.location;
     if (currentStep === 1) return formData.title && formData.description && formData.price;
+    if (currentStep === 2) return formData.images.length > 0;
     return true;
   };
 
@@ -73,7 +116,8 @@ export default function HostPage() {
           location: formData.location,
           price: parseFloat(formData.price),
           description: formData.description,
-          // Use default image for now
+          image: formData.image || 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
+          images: formData.images.length > 0 ? formData.images : ['https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop'],
           rating: 5.0,
           reviews: 0
         }
@@ -223,15 +267,38 @@ export default function HostPage() {
               <p className="text-zinc-500">Upload at least one clear photo of your space.</p>
             </div>
 
-            <div className="flex aspect-video w-full flex-col items-center justify-center rounded-3xl border-2 border-dashed border-zinc-200 p-12 text-center dark:border-zinc-800">
-              <div className="rounded-full bg-zinc-100 p-4 dark:bg-zinc-900">
-                <Upload className="h-8 w-8 text-zinc-400" />
+            {formData.images.length > 0 && (
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+                {formData.images.map((img, idx) => (
+                  <div key={idx} className="relative aspect-video overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800">
+                    <img src={img} alt="Preview" className="h-full w-full object-cover" />
+                  </div>
+                ))}
+                {isUploading && (
+                  <div className="flex aspect-video items-center justify-center rounded-2xl border-2 border-dashed border-zinc-200 dark:border-zinc-800">
+                    <Loader2 className="h-6 w-6 animate-spin text-zinc-400" />
+                  </div>
+                )}
               </div>
-              <h3 className="mt-4 font-bold">Drag and drop photos here</h3>
+            )}
+
+            <div 
+              onClick={() => document.getElementById('file-upload').click()}
+              className="group flex aspect-video w-full cursor-pointer flex-col items-center justify-center rounded-3xl border-2 border-dashed border-zinc-200 p-12 text-center transition-colors hover:border-black dark:border-zinc-800 dark:hover:border-white"
+            >
+              <input 
+                id="file-upload"
+                type="file" 
+                multiple 
+                accept="image/*" 
+                className="hidden" 
+                onChange={handleFileUpload}
+              />
+              <div className="rounded-full bg-zinc-100 p-4 transition-colors group-hover:bg-zinc-200 dark:bg-zinc-900 dark:group-hover:bg-zinc-800">
+                {isUploading ? <Loader2 className="h-8 w-8 animate-spin text-zinc-400" /> : <Upload className="h-8 w-8 text-zinc-400" />}
+              </div>
+              <h3 className="mt-4 font-bold">{isUploading ? 'Uploading...' : 'Click to upload photos'}</h3>
               <p className="mt-2 text-sm text-zinc-500">PNG, JPG or WEBP up to 10MB each</p>
-              <button className="mt-8 rounded-full bg-black px-8 py-3 text-sm font-bold text-white dark:bg-white dark:text-black">
-                Select from device
-              </button>
             </div>
           </div>
         );
@@ -244,8 +311,12 @@ export default function HostPage() {
             </div>
 
             <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-xl dark:border-zinc-800 dark:bg-zinc-950">
-              <div className="aspect-[21/9] bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center">
-                <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest">Photo Placeholder</p>
+              <div className="aspect-[21/9] bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center overflow-hidden">
+                {formData.image ? (
+                  <img src={formData.image} alt="Preview" className="h-full w-full object-cover" />
+                ) : (
+                  <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest">Photo Placeholder</p>
+                )}
               </div>
               <div className="p-8">
                 <div className="flex items-center gap-2">
