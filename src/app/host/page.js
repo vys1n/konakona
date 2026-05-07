@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -51,6 +52,9 @@ export default function HostPage() {
     images: [],
   });
 
+  const router = useRouter();
+  const supabase = createClient();
+
   const updateFormData = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
@@ -66,7 +70,7 @@ export default function HostPage() {
     for (const file of files) {
       const fileExt = file.name.split('.').pop();
       const fileName = `${Math.random()}.${fileExt}`;
-      const filePath = `${Date.now()}-${fileName}`;
+      const filePath = `listings/${Date.now()}-${fileName}`;
 
       const { data, error } = await supabase.storage
         .from('listing-images')
@@ -107,7 +111,15 @@ export default function HostPage() {
   const handlePublish = async () => {
     setIsPublishing(true);
     
-    const { data, error } = await supabase
+    const { data: { user } } = await supabase.auth.getUser();
+
+    if (!user) {
+      alert("You must be logged in to publish a space.");
+      router.push("/login");
+      return;
+    }
+
+    const { error } = await supabase
       .from('listings')
       .insert([
         {
@@ -119,7 +131,8 @@ export default function HostPage() {
           image: formData.image || 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop',
           images: formData.images.length > 0 ? formData.images : ['https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop'],
           rating: 5.0,
-          reviews: 0
+          reviews: 0,
+          user_id: user.id
         }
       ]);
 

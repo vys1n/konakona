@@ -31,7 +31,7 @@
       "source_file": "postcss.config.mjs",
       "source_location": "L1",
       "id": "postcss_config_mjs",
-      "community": 11,
+      "community": 14,
       "norm_label": "postcss.config.mjs"
     },
     {
@@ -40,7 +40,7 @@
       "source_file": "eslint.config.mjs",
       "source_location": "L1",
       "id": "eslint_config_mjs",
-      "community": 12,
+      "community": 15,
       "norm_label": "eslint.config.mjs"
     },
     {
@@ -49,8 +49,26 @@
       "source_file": "next.config.mjs",
       "source_location": "L1",
       "id": "next_config_mjs",
-      "community": 13,
+      "community": 16,
       "norm_label": "next.config.mjs"
+    },
+    {
+      "label": "middleware.js",
+      "file_type": "code",
+      "source_file": "src/middleware.js",
+      "source_location": "L1",
+      "id": "src_middleware_js",
+      "community": 3,
+      "norm_label": "middleware.js"
+    },
+    {
+      "label": "middleware()",
+      "file_type": "code",
+      "source_file": "src/middleware.js",
+      "source_location": "L5",
+      "id": "src_middleware_middleware",
+      "community": 3,
+      "norm_label": "middleware()"
     },
     {
       "label": "layout.js",
@@ -58,7 +76,7 @@
       "source_file": "src/app/layout.js",
       "source_location": "L1",
       "id": "src_app_layout_js",
-      "community": 4,
+      "community": 5,
       "norm_label": "layout.js"
     },
     {
@@ -67,7 +85,7 @@
       "source_file": "src/app/layout.js",
       "source_location": "L8",
       "id": "app_layout_rootlayout",
-      "community": 4,
+      "community": 5,
       "norm_label": "rootlayout()"
     },
     {
@@ -76,7 +94,7 @@
       "source_file": "src/app/page.js",
       "source_location": "L1",
       "id": "src_app_page_js",
-      "community": 5,
+      "community": 6,
       "norm_label": "page.js"
     },
     {
@@ -85,8 +103,26 @@
       "source_file": "src/app/page.js",
       "source_location": "L8",
       "id": "app_page_home",
-      "community": 5,
+      "community": 6,
       "norm_label": "home()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/signup/page.js",
+      "source_location": "L1",
+      "id": "src_app_signup_page_js",
+      "community": 1,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "SignupPage()",
+      "file_type": "code",
+      "source_file": "src/app/signup/page.js",
+      "source_location": "L9",
+      "id": "signup_page_signuppage",
+      "community": 1,
+      "norm_label": "signuppage()"
     },
     {
       "label": "page.js",
@@ -94,7 +130,7 @@
       "source_file": "src/app/types/page.js",
       "source_location": "L1",
       "id": "src_app_types_page_js",
-      "community": 6,
+      "community": 7,
       "norm_label": "page.js"
     },
     {
@@ -103,8 +139,44 @@
       "source_file": "src/app/types/page.js",
       "source_location": "L28",
       "id": "types_page_typespage",
-      "community": 6,
+      "community": 7,
       "norm_label": "typespage()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/login/page.js",
+      "source_location": "L1",
+      "id": "src_app_login_page_js",
+      "community": 1,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "LoginPage()",
+      "file_type": "code",
+      "source_file": "src/app/login/page.js",
+      "source_location": "L9",
+      "id": "login_page_loginpage",
+      "community": 1,
+      "norm_label": "loginpage()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/host/page.js",
+      "source_location": "L1",
+      "id": "src_app_host_page_js",
+      "community": 1,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "HostPage()",
+      "file_type": "code",
+      "source_file": "src/app/host/page.js",
+      "source_location": "L40",
+      "id": "host_page_hostpage",
+      "community": 1,
+      "norm_label": "hostpage()"
     },
     {
       "label": "page.js",
@@ -112,7 +184,7 @@
       "source_file": "src/app/search/page.js",
       "source_location": "L1",
       "id": "src_app_search_page_js",
-      "community": 1,
+      "community": 0,
       "norm_label": "page.js"
     },
     {
@@ -121,17 +193,53 @@
       "source_file": "src/app/search/page.js",
       "source_location": "L19",
       "id": "search_page_searchresults",
-      "community": 1,
+      "community": 0,
       "norm_label": "searchresults()"
     },
     {
       "label": "SearchPage()",
       "file_type": "code",
       "source_file": "src/app/search/page.js",
-      "source_location": "L180",
+      "source_location": "L196",
       "id": "search_page_searchpage",
-      "community": 1,
+      "community": 0,
       "norm_label": "searchpage()"
+    },
+    {
+      "label": "route.js",
+      "file_type": "code",
+      "source_file": "src/app/auth/callback/route.js",
+      "source_location": "L1",
+      "id": "src_app_auth_callback_route_js",
+      "community": 0,
+      "norm_label": "route.js"
+    },
+    {
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "src/app/auth/callback/route.js",
+      "source_location": "L4",
+      "id": "callback_route_get",
+      "community": 0,
+      "norm_label": "get()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/listing/[id]/page.js",
+      "source_location": "L1",
+      "id": "src_app_listing_id_page_js",
+      "community": 8,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "ListingPage()",
+      "file_type": "code",
+      "source_file": "src/app/listing/[id]/page.js",
+      "source_location": "L9",
+      "id": "id_page_listingpage",
+      "community": 8,
+      "norm_label": "listingpage()"
     },
     {
       "label": "utils.js",
@@ -139,7 +247,7 @@
       "source_file": "src/lib/utils.js",
       "source_location": "L1",
       "id": "src_lib_utils_js",
-      "community": 1,
+      "community": 0,
       "norm_label": "utils.js"
     },
     {
@@ -148,8 +256,17 @@
       "source_file": "src/lib/utils.js",
       "source_location": "L4",
       "id": "lib_utils_cn",
-      "community": 1,
+      "community": 0,
       "norm_label": "cn()"
+    },
+    {
+      "label": "supabase.js",
+      "file_type": "code",
+      "source_file": "src/lib/supabase.js",
+      "source_location": "L1",
+      "id": "src_lib_supabase_js",
+      "community": 17,
+      "norm_label": "supabase.js"
     },
     {
       "label": "location.js",
@@ -157,7 +274,7 @@
       "source_file": "src/lib/location.js",
       "source_location": "L1",
       "id": "src_lib_location_js",
-      "community": 2,
+      "community": 0,
       "norm_label": "location.js"
     },
     {
@@ -166,7 +283,7 @@
       "source_file": "src/lib/location.js",
       "source_location": "L20",
       "id": "lib_location_normalizelocationsearch",
-      "community": 2,
+      "community": 0,
       "norm_label": "normalizelocationsearch()"
     },
     {
@@ -175,8 +292,62 @@
       "source_file": "src/lib/location.js",
       "source_location": "L35",
       "id": "lib_location_formatlocationdisplay",
-      "community": 2,
+      "community": 0,
       "norm_label": "formatlocationdisplay()"
+    },
+    {
+      "label": "client.js",
+      "file_type": "code",
+      "source_file": "src/lib/supabase/client.js",
+      "source_location": "L1",
+      "id": "src_lib_supabase_client_js",
+      "community": 9,
+      "norm_label": "client.js"
+    },
+    {
+      "label": "createClient()",
+      "file_type": "code",
+      "source_file": "src/lib/supabase/client.js",
+      "source_location": "L3",
+      "id": "supabase_client_createclient",
+      "community": 9,
+      "norm_label": "createclient()"
+    },
+    {
+      "label": "server.js",
+      "file_type": "code",
+      "source_file": "src/lib/supabase/server.js",
+      "source_location": "L1",
+      "id": "src_lib_supabase_server_js",
+      "community": 1,
+      "norm_label": "server.js"
+    },
+    {
+      "label": "createClient()",
+      "file_type": "code",
+      "source_file": "src/lib/supabase/server.js",
+      "source_location": "L4",
+      "id": "supabase_server_createclient",
+      "community": 1,
+      "norm_label": "createclient()"
+    },
+    {
+      "label": "middleware.js",
+      "file_type": "code",
+      "source_file": "src/lib/supabase/middleware.js",
+      "source_location": "L1",
+      "id": "src_lib_supabase_middleware_js",
+      "community": 3,
+      "norm_label": "middleware.js"
+    },
+    {
+      "label": "updateSession()",
+      "file_type": "code",
+      "source_file": "src/lib/supabase/middleware.js",
+      "source_location": "L4",
+      "id": "supabase_middleware_updatesession",
+      "community": 3,
+      "norm_label": "updatesession()"
     },
     {
       "label": "Footer.js",
@@ -184,7 +355,7 @@
       "source_file": "src/components/layout/Footer.js",
       "source_location": "L1",
       "id": "src_components_layout_footer_js",
-      "community": 7,
+      "community": 10,
       "norm_label": "footer.js"
     },
     {
@@ -193,7 +364,7 @@
       "source_file": "src/components/layout/Footer.js",
       "source_location": "L3",
       "id": "layout_footer_footer",
-      "community": 7,
+      "community": 10,
       "norm_label": "footer()"
     },
     {
@@ -202,16 +373,16 @@
       "source_file": "src/components/layout/Header.js",
       "source_location": "L1",
       "id": "src_components_layout_header_js",
-      "community": 8,
+      "community": 1,
       "norm_label": "header.js"
     },
     {
       "label": "Header()",
       "file_type": "code",
       "source_file": "src/components/layout/Header.js",
-      "source_location": "L4",
+      "source_location": "L10",
       "id": "layout_header_header",
-      "community": 8,
+      "community": 1,
       "norm_label": "header()"
     },
     {
@@ -220,7 +391,7 @@
       "source_file": "src/components/home/Hero.js",
       "source_location": "L1",
       "id": "src_components_home_hero_js",
-      "community": 9,
+      "community": 11,
       "norm_label": "hero.js"
     },
     {
@@ -229,8 +400,26 @@
       "source_file": "src/components/home/Hero.js",
       "source_location": "L7",
       "id": "home_hero_hero",
-      "community": 9,
+      "community": 11,
       "norm_label": "hero()"
+    },
+    {
+      "label": "ImageGallery.js",
+      "file_type": "code",
+      "source_file": "src/components/ui/ImageGallery.js",
+      "source_location": "L1",
+      "id": "src_components_ui_imagegallery_js",
+      "community": 12,
+      "norm_label": "imagegallery.js"
+    },
+    {
+      "label": "ImageGallery()",
+      "file_type": "code",
+      "source_file": "src/components/ui/ImageGallery.js",
+      "source_location": "L6",
+      "id": "ui_imagegallery_imagegallery",
+      "community": 12,
+      "norm_label": "imagegallery()"
     },
     {
       "label": "mock-data.js",
@@ -238,123 +427,6 @@
       "source_file": "src/data/mock-data.js",
       "source_location": "L1",
       "id": "src_data_mock_data_js",
-      "community": 14,
-      "norm_label": "mock-data.js"
-    },
-    {
-      "label": "postcss.config.mjs",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/postcss.config.mjs",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_postcss_config_mjs",
-      "community": 15,
-      "norm_label": "postcss.config.mjs"
-    },
-    {
-      "label": "eslint.config.mjs",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/eslint.config.mjs",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_eslint_config_mjs",
-      "community": 16,
-      "norm_label": "eslint.config.mjs"
-    },
-    {
-      "label": "next.config.mjs",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/next.config.mjs",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_next_config_mjs",
-      "community": 17,
-      "norm_label": "next.config.mjs"
-    },
-    {
-      "label": "layout.js",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/src/app/layout.js",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_src_app_layout_js",
-      "community": 4,
-      "norm_label": "layout.js"
-    },
-    {
-      "label": "page.js",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/src/app/page.js",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_src_app_page_js",
-      "community": 5,
-      "norm_label": "page.js"
-    },
-    {
-      "label": "page.js",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/src/app/types/page.js",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_src_app_types_page_js",
-      "community": 6,
-      "norm_label": "page.js"
-    },
-    {
-      "label": "page.js",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/src/app/search/page.js",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_src_app_search_page_js",
-      "community": 1,
-      "norm_label": "page.js"
-    },
-    {
-      "label": "utils.js",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/src/lib/utils.js",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_src_lib_utils_js",
-      "community": 1,
-      "norm_label": "utils.js"
-    },
-    {
-      "label": "location.js",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/src/lib/location.js",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_src_lib_location_js",
-      "community": 2,
-      "norm_label": "location.js"
-    },
-    {
-      "label": "Footer.js",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/src/components/layout/Footer.js",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_src_components_layout_footer_js",
-      "community": 7,
-      "norm_label": "footer.js"
-    },
-    {
-      "label": "Header.js",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/src/components/layout/Header.js",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_src_components_layout_header_js",
-      "community": 8,
-      "norm_label": "header.js"
-    },
-    {
-      "label": "Hero.js",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/src/components/home/Hero.js",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_src_components_home_hero_js",
-      "community": 9,
-      "norm_label": "hero.js"
-    },
-    {
-      "label": "mock-data.js",
-      "file_type": "code",
-      "source_file": "/home/vysin/Code/project/konakona/src/data/mock-data.js",
-      "source_location": "L1",
-      "id": "home_vysin_code_project_konakona_src_data_mock_data_js",
       "community": 18,
       "norm_label": "mock-data.js"
     },
@@ -368,9 +440,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Graphify is used for architectural analysis and cross-module relationship discovery to navigate the codebase efficiently.",
-      "id": "gemini_graphify",
-      "community": 3,
-      "norm_label": "graphify integration"
+      "community": 4,
+      "norm_label": "graphify integration",
+      "id": "gemini_graphify"
     },
     {
       "label": "graphify-out",
@@ -381,9 +453,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "gemini_graphify_out",
-      "community": 3,
-      "norm_label": "graphify-out"
+      "community": 4,
+      "norm_label": "graphify-out",
+      "id": "gemini_graphify_out"
     },
     {
       "label": "GRAPH_REPORT.md",
@@ -394,9 +466,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "gemini_graph_report",
-      "community": 3,
-      "norm_label": "graph_report.md"
+      "community": 4,
+      "norm_label": "graph_report.md",
+      "id": "gemini_graph_report"
     },
     {
       "label": "wiki/index.md",
@@ -407,9 +479,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "gemini_wiki_index",
-      "community": 3,
-      "norm_label": "wiki/index.md"
+      "community": 4,
+      "norm_label": "wiki/index.md",
+      "id": "gemini_wiki_index"
     },
     {
       "label": "Next.js Agent Rules",
@@ -421,9 +493,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Specialized rules for handling a custom Next.js version with breaking changes and differing APIs from standard training data.",
-      "id": "agents_nextjs_agent_rules",
-      "community": 0,
-      "norm_label": "next.js agent rules"
+      "community": 2,
+      "norm_label": "next.js agent rules",
+      "id": "agents_nextjs_agent_rules"
     },
     {
       "label": "Next.js Framework",
@@ -434,9 +506,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "next_nextjs",
-      "community": 0,
-      "norm_label": "next.js framework"
+      "community": 2,
+      "norm_label": "next.js framework",
+      "id": "next_nextjs"
     },
     {
       "label": "app/page.js",
@@ -447,9 +519,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "next_app_page",
-      "community": 0,
-      "norm_label": "app/page.js"
+      "community": 2,
+      "norm_label": "app/page.js",
+      "id": "next_app_page"
     },
     {
       "label": "Geist Font",
@@ -460,9 +532,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "next_geist",
-      "community": 0,
-      "norm_label": "geist font"
+      "community": 2,
+      "norm_label": "geist font",
+      "id": "next_geist"
     },
     {
       "label": "Vercel Platform",
@@ -473,9 +545,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "next_vercel",
-      "community": 0,
-      "norm_label": "vercel platform"
+      "community": 2,
+      "norm_label": "vercel platform",
+      "id": "next_vercel"
     },
     {
       "label": "Next.js (App Router)",
@@ -486,9 +558,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "tech_stack_nextjs",
-      "community": 0,
-      "norm_label": "next.js (app router)"
+      "community": 2,
+      "norm_label": "next.js (app router)",
+      "id": "tech_stack_nextjs"
     },
     {
       "label": "TypeScript",
@@ -500,9 +572,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Highly recommended for marketplace development to ensure type safety and code quality.",
-      "id": "tech_stack_typescript",
-      "community": 0,
-      "norm_label": "typescript"
+      "community": 2,
+      "norm_label": "typescript",
+      "id": "tech_stack_typescript"
     },
     {
       "label": "Tailwind CSS",
@@ -513,9 +585,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "tech_stack_tailwind_css",
       "community": 19,
-      "norm_label": "tailwind css"
+      "norm_label": "tailwind css",
+      "id": "tech_stack_tailwind_css"
     },
     {
       "label": "shadcn/ui",
@@ -526,9 +598,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "tech_stack_shadcn_ui",
       "community": 20,
-      "norm_label": "shadcn/ui"
+      "norm_label": "shadcn/ui",
+      "id": "tech_stack_shadcn_ui"
     },
     {
       "label": "TanStack Query",
@@ -539,9 +611,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "tech_stack_tanstack_query",
       "community": 21,
-      "norm_label": "tanstack query"
+      "norm_label": "tanstack query",
+      "id": "tech_stack_tanstack_query"
     },
     {
       "label": "Zustand",
@@ -552,9 +624,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "tech_stack_zustand",
       "community": 22,
-      "norm_label": "zustand"
+      "norm_label": "zustand",
+      "id": "tech_stack_zustand"
     },
     {
       "label": "React Leaflet",
@@ -566,9 +638,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Selected as an open-source mapping solution.",
-      "id": "tech_stack_react_leaflet",
-      "community": 10,
-      "norm_label": "react leaflet"
+      "community": 13,
+      "norm_label": "react leaflet",
+      "id": "tech_stack_react_leaflet"
     },
     {
       "label": "Google Maps API",
@@ -579,9 +651,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "tech_stack_google_maps_api",
-      "community": 10,
-      "norm_label": "google maps api"
+      "community": 13,
+      "norm_label": "google maps api",
+      "id": "tech_stack_google_maps_api"
     },
     {
       "label": "Razorpay SDK",
@@ -592,9 +664,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "tech_stack_razorpay_sdk",
       "community": 23,
-      "norm_label": "razorpay sdk"
+      "norm_label": "razorpay sdk",
+      "id": "tech_stack_razorpay_sdk"
     },
     {
       "label": "Claude Agents Configuration",
@@ -605,12 +677,48 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_agents_config",
-      "community": 0,
-      "norm_label": "claude agents configuration"
+      "community": 2,
+      "norm_label": "claude agents configuration",
+      "id": "claude_agents_config"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/middleware.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "src_middleware_js",
+      "_tgt": "src_middleware_middleware",
+      "source": "src_middleware_js",
+      "target": "src_middleware_middleware",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/middleware.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "src_middleware_middleware",
+      "_tgt": "supabase_middleware_updatesession",
+      "source": "src_middleware_middleware",
+      "target": "supabase_middleware_updatesession"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/middleware.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "src_middleware_middleware",
+      "_tgt": "supabase_server_createclient",
+      "source": "src_middleware_middleware",
+      "target": "supabase_server_createclient"
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -621,18 +729,6 @@
       "_tgt": "app_layout_rootlayout",
       "source": "src_app_layout_js",
       "target": "app_layout_rootlayout",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/home/vysin/Code/project/konakona/src/app/layout.js",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_src": "home_vysin_code_project_konakona_src_app_layout_js",
-      "_tgt": "app_layout_rootlayout",
-      "source": "app_layout_rootlayout",
-      "target": "home_vysin_code_project_konakona_src_app_layout_js",
       "confidence_score": 1.0
     },
     {
@@ -650,14 +746,26 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/home/vysin/Code/project/konakona/src/app/page.js",
-      "source_location": "L8",
+      "source_file": "src/app/signup/page.js",
+      "source_location": "L9",
       "weight": 1.0,
-      "_src": "home_vysin_code_project_konakona_src_app_page_js",
-      "_tgt": "app_page_home",
-      "source": "app_page_home",
-      "target": "home_vysin_code_project_konakona_src_app_page_js",
+      "_src": "src_app_signup_page_js",
+      "_tgt": "signup_page_signuppage",
+      "source": "src_app_signup_page_js",
+      "target": "signup_page_signuppage",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/signup/page.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "signup_page_signuppage",
+      "_tgt": "supabase_server_createclient",
+      "source": "signup_page_signuppage",
+      "target": "supabase_server_createclient"
     },
     {
       "relation": "contains",
@@ -674,14 +782,50 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/home/vysin/Code/project/konakona/src/app/types/page.js",
-      "source_location": "L28",
+      "source_file": "src/app/login/page.js",
+      "source_location": "L9",
       "weight": 1.0,
-      "_src": "home_vysin_code_project_konakona_src_app_types_page_js",
-      "_tgt": "types_page_typespage",
-      "source": "types_page_typespage",
-      "target": "home_vysin_code_project_konakona_src_app_types_page_js",
+      "_src": "src_app_login_page_js",
+      "_tgt": "login_page_loginpage",
+      "source": "src_app_login_page_js",
+      "target": "login_page_loginpage",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/login/page.js",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "login_page_loginpage",
+      "_tgt": "supabase_server_createclient",
+      "source": "login_page_loginpage",
+      "target": "supabase_server_createclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/host/page.js",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "src_app_host_page_js",
+      "_tgt": "host_page_hostpage",
+      "source": "src_app_host_page_js",
+      "target": "host_page_hostpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/host/page.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_src": "host_page_hostpage",
+      "_tgt": "supabase_server_createclient",
+      "source": "host_page_hostpage",
+      "target": "supabase_server_createclient"
     },
     {
       "relation": "contains",
@@ -699,13 +843,25 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/search/page.js",
-      "source_location": "L180",
+      "source_location": "L196",
       "weight": 1.0,
       "_src": "src_app_search_page_js",
       "_tgt": "search_page_searchpage",
       "source": "src_app_search_page_js",
       "target": "search_page_searchpage",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/search/page.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "search_page_searchresults",
+      "_tgt": "callback_route_get",
+      "source": "search_page_searchresults",
+      "target": "callback_route_get"
     },
     {
       "relation": "calls",
@@ -734,25 +890,37 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/home/vysin/Code/project/konakona/src/app/search/page.js",
-      "source_location": "L19",
+      "source_file": "src/app/auth/callback/route.js",
+      "source_location": "L4",
       "weight": 1.0,
-      "_src": "home_vysin_code_project_konakona_src_app_search_page_js",
-      "_tgt": "search_page_searchresults",
-      "source": "search_page_searchresults",
-      "target": "home_vysin_code_project_konakona_src_app_search_page_js",
+      "_src": "src_app_auth_callback_route_js",
+      "_tgt": "callback_route_get",
+      "source": "src_app_auth_callback_route_js",
+      "target": "callback_route_get",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/auth/callback/route.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "callback_route_get",
+      "_tgt": "supabase_server_createclient",
+      "source": "callback_route_get",
+      "target": "supabase_server_createclient"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/home/vysin/Code/project/konakona/src/app/search/page.js",
-      "source_location": "L180",
+      "source_file": "src/app/listing/[id]/page.js",
+      "source_location": "L9",
       "weight": 1.0,
-      "_src": "home_vysin_code_project_konakona_src_app_search_page_js",
-      "_tgt": "search_page_searchpage",
-      "source": "search_page_searchpage",
-      "target": "home_vysin_code_project_konakona_src_app_search_page_js",
+      "_src": "src_app_listing_id_page_js",
+      "_tgt": "id_page_listingpage",
+      "source": "src_app_listing_id_page_js",
+      "target": "id_page_listingpage",
       "confidence_score": 1.0
     },
     {
@@ -765,18 +933,6 @@
       "_tgt": "lib_utils_cn",
       "source": "src_lib_utils_js",
       "target": "lib_utils_cn",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/home/vysin/Code/project/konakona/src/lib/utils.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_src": "home_vysin_code_project_konakona_src_lib_utils_js",
-      "_tgt": "lib_utils_cn",
-      "source": "lib_utils_cn",
-      "target": "home_vysin_code_project_konakona_src_lib_utils_js",
       "confidence_score": 1.0
     },
     {
@@ -806,25 +962,49 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/home/vysin/Code/project/konakona/src/lib/location.js",
-      "source_location": "L20",
+      "source_file": "src/lib/supabase/client.js",
+      "source_location": "L3",
       "weight": 1.0,
-      "_src": "home_vysin_code_project_konakona_src_lib_location_js",
-      "_tgt": "lib_location_normalizelocationsearch",
-      "source": "lib_location_normalizelocationsearch",
-      "target": "home_vysin_code_project_konakona_src_lib_location_js",
+      "_src": "src_lib_supabase_client_js",
+      "_tgt": "supabase_client_createclient",
+      "source": "src_lib_supabase_client_js",
+      "target": "supabase_client_createclient",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/home/vysin/Code/project/konakona/src/lib/location.js",
-      "source_location": "L35",
+      "source_file": "src/lib/supabase/server.js",
+      "source_location": "L4",
       "weight": 1.0,
-      "_src": "home_vysin_code_project_konakona_src_lib_location_js",
-      "_tgt": "lib_location_formatlocationdisplay",
-      "source": "lib_location_formatlocationdisplay",
-      "target": "home_vysin_code_project_konakona_src_lib_location_js",
+      "_src": "src_lib_supabase_server_js",
+      "_tgt": "supabase_server_createclient",
+      "source": "src_lib_supabase_server_js",
+      "target": "supabase_server_createclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/components/layout/Header.js",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "layout_header_header",
+      "_tgt": "supabase_server_createclient",
+      "source": "supabase_server_createclient",
+      "target": "layout_header_header"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/supabase/middleware.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "src_lib_supabase_middleware_js",
+      "_tgt": "supabase_middleware_updatesession",
+      "source": "src_lib_supabase_middleware_js",
+      "target": "supabase_middleware_updatesession",
       "confidence_score": 1.0
     },
     {
@@ -842,37 +1022,13 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/home/vysin/Code/project/konakona/src/components/layout/Footer.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_src": "home_vysin_code_project_konakona_src_components_layout_footer_js",
-      "_tgt": "layout_footer_footer",
-      "source": "layout_footer_footer",
-      "target": "home_vysin_code_project_konakona_src_components_layout_footer_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Header.js",
-      "source_location": "L4",
+      "source_location": "L10",
       "weight": 1.0,
       "_src": "src_components_layout_header_js",
       "_tgt": "layout_header_header",
       "source": "src_components_layout_header_js",
       "target": "layout_header_header",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/home/vysin/Code/project/konakona/src/components/layout/Header.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_src": "home_vysin_code_project_konakona_src_components_layout_header_js",
-      "_tgt": "layout_header_header",
-      "source": "layout_header_header",
-      "target": "home_vysin_code_project_konakona_src_components_layout_header_js",
       "confidence_score": 1.0
     },
     {
@@ -890,13 +1046,13 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/home/vysin/Code/project/konakona/src/components/home/Hero.js",
-      "source_location": "L7",
+      "source_file": "src/components/ui/ImageGallery.js",
+      "source_location": "L6",
       "weight": 1.0,
-      "_src": "home_vysin_code_project_konakona_src_components_home_hero_js",
-      "_tgt": "home_hero_hero",
-      "source": "home_hero_hero",
-      "target": "home_vysin_code_project_konakona_src_components_home_hero_js",
+      "_src": "src_components_ui_imagegallery_js",
+      "_tgt": "ui_imagegallery_imagegallery",
+      "source": "src_components_ui_imagegallery_js",
+      "target": "ui_imagegallery_imagegallery",
       "confidence_score": 1.0
     },
     {
@@ -942,8 +1098,8 @@
       "source_file": "CLAUDE.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "claude_agents_config",
-      "_tgt": "agents_nextjs_agent_rules",
+      "_src": "agents_nextjs_agent_rules",
+      "_tgt": "claude_agents_config",
       "source": "agents_nextjs_agent_rules",
       "target": "claude_agents_config"
     },
@@ -1002,8 +1158,8 @@
       "source_file": "tech_stack.txt",
       "source_location": null,
       "weight": 1.0,
-      "_src": "tech_stack_nextjs",
-      "_tgt": "next_nextjs",
+      "_src": "next_nextjs",
+      "_tgt": "tech_stack_nextjs",
       "source": "next_nextjs",
       "target": "tech_stack_nextjs"
     },
@@ -1014,8 +1170,8 @@
       "source_file": "tech_stack.txt",
       "source_location": null,
       "weight": 1.0,
-      "_src": "tech_stack_typescript",
-      "_tgt": "next_nextjs",
+      "_src": "next_nextjs",
+      "_tgt": "tech_stack_typescript",
       "source": "next_nextjs",
       "target": "tech_stack_typescript"
     },
