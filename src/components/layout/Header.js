@@ -100,6 +100,13 @@ export default function Header() {
                       {user.email}
                     </div>
                     <Link
+                      href="/my-listings"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block w-full rounded-xl px-3 py-2 text-left text-sm transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900"
+                    >
+                      My Listings
+                    </Link>
+                    <Link
                       href="/host"
                       onClick={() => setIsMenuOpen(false)}
                       className="block w-full rounded-xl px-3 py-2 text-left text-sm transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900"

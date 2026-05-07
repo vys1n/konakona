@@ -7,7 +7,8 @@ export async function middleware(request) {
   const response = await updateSession(request)
 
   // Then check for protected routes
-  if (request.nextUrl.pathname.startsWith('/host')) {
+  const protectedRoutes = ['/host', '/my-listings']
+  if (protectedRoutes.some(route => request.nextUrl.pathname.startsWith(route))) {
     const supabase = await createClient()
     const { data: { user } } = await supabase.auth.getUser()
 

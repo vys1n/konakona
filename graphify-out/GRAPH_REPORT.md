@@ -1,12 +1,12 @@
 # Graph Report - konakona  (2026-05-07)
 
 ## Corpus Check
-- 24 files · ~7,050 words
+- 25 files · ~7,487 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 64 nodes · 42 edges · 11 communities detected
-- Extraction: 69% EXTRACTED · 31% INFERRED · 0% AMBIGUOUS · INFERRED: 13 edges (avg confidence: 0.82)
+- 66 nodes · 44 edges · 11 communities detected
+- Extraction: 68% EXTRACTED · 32% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -23,7 +23,7 @@
 - [[_COMMUNITY_Community 23|Community 23]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `createClient()` - 7 edges
+1. `createClient()` - 8 edges
 2. `Next.js Framework` - 6 edges
 3. `SearchResults()` - 4 edges
 4. `middleware()` - 3 edges
@@ -31,8 +31,8 @@
 6. `graphify-out` - 3 edges
 7. `SignupPage()` - 2 edges
 8. `LoginPage()` - 2 edges
-9. `HostPage()` - 2 edges
-10. `cn()` - 2 edges
+9. `MyListingsPage()` - 2 edges
+10. `HostPage()` - 2 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Next.js Framework` --semantically_similar_to--> `Next.js (App Router)`  [INFERRED] [semantically similar]
@@ -52,12 +52,12 @@
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.2
-Nodes (4): GET(), formatLocationDisplay(), cn(), SearchResults()
+Cohesion: 0.17
+Nodes (6): HostPage(), Header(), LoginPage(), MyListingsPage(), SignupPage(), createClient()
 
 ### Community 1 - "Community 1"
 Cohesion: 0.2
-Nodes (5): HostPage(), Header(), LoginPage(), SignupPage(), createClient()
+Nodes (4): GET(), formatLocationDisplay(), cn(), SearchResults()
 
 ### Community 2 - "Community 2"
 Cohesion: 0.25
@@ -116,12 +116,12 @@ Nodes (1): Razorpay SDK
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createClient()` connect `Community 1` to `Community 0`, `Community 3`?**
-  _High betweenness centrality (0.101) - this node is a cross-community bridge._
-- **Why does `GET()` connect `Community 0` to `Community 1`?**
-  _High betweenness centrality (0.069) - this node is a cross-community bridge._
-- **Are the 6 inferred relationships involving `createClient()` (e.g. with `middleware()` and `SignupPage()`) actually correct?**
-  _`createClient()` has 6 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `createClient()` connect `Community 0` to `Community 1`, `Community 3`?**
+  _High betweenness centrality (0.117) - this node is a cross-community bridge._
+- **Why does `GET()` connect `Community 1` to `Community 0`?**
+  _High betweenness centrality (0.073) - this node is a cross-community bridge._
+- **Are the 7 inferred relationships involving `createClient()` (e.g. with `middleware()` and `SignupPage()`) actually correct?**
+  _`createClient()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 2 inferred relationships involving `Next.js Framework` (e.g. with `Next.js (App Router)` and `TypeScript`) actually correct?**
   _`Next.js Framework` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 3 inferred relationships involving `SearchResults()` (e.g. with `GET()` and `formatLocationDisplay()`) actually correct?**
